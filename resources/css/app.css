@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active),
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+    @apply bg-primary;
+  }
+
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):focus),
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) {
+    @apply bg-primary text-slate-50;
+  }
+
+  .input {
+    @apply border-primary focus:outline-primary;
+
+  }
+    .input:focus{
+        outline: none !important;
+        @apply border-primary;
+    }
+  .btn-primary{
+    @apply bg-primary text-slate-50 hover:bg-primaryDarken border-none;
+  }
+}
